@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Service2 Light</string>
+
+    <string name="service_name">Chooser Service2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+</resources>
