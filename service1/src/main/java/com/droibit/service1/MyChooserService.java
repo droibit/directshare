@@ -41,7 +41,7 @@ public class MyChooserService extends ChooserTargetService {
         for (int i = 0; i < NAMES.length; i++) {
             final String title = String.format("%d %s", i, NAMES[i]);
             final Icon icon = Icon.createWithResource(this, R.drawable.ic_man);
-            final float score = .01f + (i / NAMES.length);
+            final float score = (float)i / NAMES.length;
             final Bundle extra = new Bundle();
             extra.putString(EXTRA_NAME, title);
             extra.putInt(EXTRA_ID, i);
