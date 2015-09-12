@@ -20,12 +20,16 @@ public class MainActivity extends AppCompatActivity {
         final Intent intent = getIntent();
         if (Intent.ACTION_SEND.equals(intent.getAction())) {
             final StringBuilder sb = new StringBuilder()
+                    .append("title: ")
                     .append(intent.getStringExtra(Intent.EXTRA_TITLE))
                     .append("\n")
+                    .append("text: ")
                     .append(intent.getStringExtra(Intent.EXTRA_TEXT))
                     .append("\n")
+                    .append("id: ")
                     .append(intent.getExtras().getInt(MyChooserService2.EXTRA_ID))
                     .append("\n")
+                    .append("name: ")
                     .append(intent.getExtras().getString(MyChooserService2.EXTRA_NAME));
 
             ((TextView) findViewById(R.id.text)).setText(sb.toString());

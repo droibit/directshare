@@ -16,14 +16,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final Intent intent = getIntent();
-        if (Intent.ACTION_VIEW.equals(intent.getAction())) {
+        if (Intent.ACTION_SEND.equals(intent.getAction())) {
             final StringBuilder sb = new StringBuilder()
+                    .append("title: ")
                     .append(intent.getStringExtra(Intent.EXTRA_TITLE))
                     .append("\n")
+                    .append("text: ")
                     .append(intent.getStringExtra(Intent.EXTRA_TEXT))
                     .append("\n")
+                    .append("id: ")
                     .append(intent.getExtras().getInt(MyChooserService.EXTRA_ID))
                     .append("\n")
+                    .append("name: ")
                     .append(intent.getExtras().getString(MyChooserService.EXTRA_NAME));
 
             ((TextView) findViewById(R.id.text)).setText(sb.toString());
